@@ -18,9 +18,9 @@ console.log('Gib das Ergebnis der Addition von a und b aus.');
 // Wenn Links oder rechts vom Plus-Operator ein String steht wird verkettet.
 // Wenn Links und rechts Zahlen stehen wird addiert.
 console.log('a+b');
-console.log('Das Ergebnis der Addition:' (+ a + b))
+console.log('Das Ergebnis der Addition.' + (a + b));
 
-console.log('Aufgabe 3')
+console.log('Aufgabe 3');
 console.log('Gib das Ergebnis der Subtraktion, Multiplikation, Division von a und b aus.');
 
 console.log('Subtraktion:' + (a-b));
@@ -32,7 +32,7 @@ console.log('Der Wert von c sei das Ergebnis der Addition von a und b.');
 
 let c = a+b;
 
-console.log('c hat den Wert:' + c)
+console.log('c hat den Wert:' + c);
 
 console.log('Aufgabe 5');
 console.log('a und b sind die Seitenlänge der Katheten eines rechtwinkligen Dreiecks. Bestimme die Länge der Hypotenuse c');
@@ -46,7 +46,7 @@ c = Math.sqrt(cQuadrat);
 
 console.log('Die Hypotenuse ist' + c + 'lang.');
 
-console.log('Aufgabe 6')
+console.log('Aufgabe 6');
 console.log('Ein Kunde legt 100 Euro auf dem Sparbuch an. Jedes Jahr bekommt er 10% Zinsen. Wie viel bekommt der Kunde');
 console.log('nach zwei Jahren ausgezahlt. Beachte den Zinseszinseffekt');
 
@@ -56,9 +56,48 @@ let zinssatz = 0.1; /* Das Komma ist zur Entwicklungszeit ein Punkt. */
 
 let kapitalNachEinemJahr = startkapital * (1 + zinssatz);
 
-console.log('Kapital nach einem Jahr' kapitalNachEinemJahr + 'EUR.');
+console.log('Kapital nach einem Jahr'+ kapitalNachEinemJahr + 'EUR.');
 
 console.log('Kapital nach zwei Jahren: ' + kapitalNachEinemJahr + 'EUR');
 
-let endkapital = Math.pow (startkapital * zinssatz);
+let endkapital = startkapital * Math.pow ((1 + zinssatz) , laufzeit);
 
+console.log('Endkapital Nach' + laufzeit + 'Jahren' + endkapital + 'EUR');
+
+console.log('Aufgabe 7');
+console.log('Die Werte aus der vorherigen Aufgabe werden als Reihe dargestellt.');
+
+// Im Zeitpunkt Null ist das endkapital = dem startkapital
+endkapital = startkapital;
+console.log('endkapital');
+
+// Nach dem ersten Jahr erhöht sich das Endkapital um den Faktor 1,1
+endkapital = startkapital * (1 + zinssatz);
+console.log('endkapital');
+
+// Nach dem zweiten Jahr wird dem Endkapital der Wert des Endkapitals * 1,1 zugewiesen.
+endkapital = startkapital * (1 + zinssatz);
+console.log('endKapital');
+
+// Nach dem dritten Jahr wird dem Endkapital der Wert des Endkapitals * 1,1 zugewiesen.
+endkapital = startkapital * (1 + zinssatz);
+console.log('endKapital');
+
+// Nach dem vierten Jahr wird dem Endkapital der Wert des Endkapitals * 1,1 zugewiesen.
+endkapital = startkapital * (1 + zinssatz);
+console.log('endKapital');
+
+console.log('Aufgabe 8');
+console.log('In Aufgabe 7 wurde die Anweisung endkapital = ...mehrfach wiederholt.');
+console.log('Um sich Tipparbeit zu sparen und die Wiederhohlung der Anweisung in der');
+console.log('gewünschten Häufigkeit durchzuführen, nutzt der Programmierer eine Schleife.');
+
+startkapital = 100;
+endkapital = startkapital;
+zinssatz = 0.1;
+laufzeit = 3;
+
+for (let i = 0; i < laufzeit; i++) {
+    endkapital = startkapital * (1 + zinssatz);
+    console.log('Endkapital nach Jahr 1' + (i + 1) + );
+}
